@@ -2,6 +2,7 @@
 wp_data/wp-admin/
 wp_data/wp-content/uploads/
 wp_data/wp-includes/
+wp_data/wp-config.php
 
 # MySQL data
 db_data/
@@ -28,6 +29,3 @@ npm-debug.log*
 # Ignore IDE specific files
 .idea/
 .vscode/
-
-# Ignore WordPress configuration file
-wp_data/wp-config.php
