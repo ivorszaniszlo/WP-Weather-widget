@@ -1,0 +1,11 @@
+.weather {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+}
+
+.weather p {
+    margin: 0;
+    padding: 5px 0;
+}
