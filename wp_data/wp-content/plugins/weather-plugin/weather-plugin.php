@@ -12,6 +12,20 @@ Author: Szaniszló Ivor
 require_once plugin_dir_path(__FILE__) . 'includes/weather-plugin-functions.php';
 require_once plugin_dir_path(__FILE__) . 'includes/weather-widget.php';
 
+// Add a dashboard widget to display the memory limit
+function weather_plugin_add_dashboard_widgets() {
+    wp_add_dashboard_widget(
+        'weather_plugin_memory_limit_widget', // Widget slug.
+        'Memory Limit', // Title.
+        'weather_plugin_memory_limit_widget_function' // Display function.
+    );
+}
+add_action('wp_dashboard_setup', 'weather_plugin_add_dashboard_widgets');
+
+function weather_plugin_memory_limit_widget_function() {
+    echo 'Current memory limit: ' . ini_get('memory_limit');
+}
+
 function weather_plugin_enqueue_scripts() {
     wp_enqueue_style('weather-plugin-style', plugins_url('assets/css/style.css', __FILE__));
 }
