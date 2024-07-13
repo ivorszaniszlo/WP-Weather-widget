@@ -4,7 +4,7 @@
 // Add any additional functions or logic here that support your Weather Plugin
 
 // Example function to retrieve weather data for a specific city
-function get_weather_data($city) {
+function weather_plugin_get_weather($city) {
     $transient_key = 'weather_data_' . $city;
     $weather_data = get_transient($transient_key);
 
@@ -38,6 +38,10 @@ function get_weather_data($city) {
         }
     }
 
-    return $weather_data;
+    return "<div class='weather'>
+        <p>Temperature: {$weather_data['temperature']}°C</p>
+        <p>Humidity: {$weather_data['humidity']}%</p>
+        <p>Description: {$weather_data['description']}</p>
+    </div>";
 }
 ?>

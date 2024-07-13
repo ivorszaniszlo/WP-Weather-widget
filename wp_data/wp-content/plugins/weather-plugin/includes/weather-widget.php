@@ -1,25 +1,23 @@
 <?php
-
-require_once plugin_dir_path(__FILE__) . '../weather-plugin.php';
 class Weather_Widget extends WP_Widget {
 
     function __construct() {
         parent::__construct(
             'weather_widget',
             __('Weather Widget', 'weather_widget_domain'),
-            array('description' => __('Displays weather data for a specific city', 'weather_widget_domain'))
+            array('description' => __('A widget to display weather information', 'weather_widget_domain'))
         );
     }
 
     public function widget($args, $instance) {
-        $city = apply_filters('widget_city', $instance['city']);
+        $city = !empty($instance['city']) ? $instance['city'] : 'Budapest';
 
         echo $args['before_widget'];
         if (!empty($city)) {
-            echo $args['before_title'] . $city . $args['after_title'];
+            echo $args['before_title'] . apply_filters('widget_title', $city) . $args['after_title'];
         }
 
-        echo get_weather_data($city);
+        echo weather_plugin_get_weather($city);
 
         echo $args['after_widget'];
     }
@@ -50,5 +48,4 @@ function register_weather_widget() {
     register_widget('Weather_Widget');
 }
 add_action('widgets_init', 'register_weather_widget');
-
 ?>
