@@ -30,4 +30,4 @@ npm-debug.log*
 .vscode/
 
 # Ignore WordPress configuration file
-wp-config.php
+wp_data/wp-config.php
