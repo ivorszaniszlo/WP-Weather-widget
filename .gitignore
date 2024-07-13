@@ -1,0 +1,29 @@
+# WordPress data
+wp_data/
+wp-content/uploads/
+
+# MySQL data
+db_data/
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore node_modules
+node_modules/
+
+# Ignore npm debug file
+npm-debug.log*
+
+# Ignore environment variables file
+.env
+
+# Ignore IDE specific files
+.idea/
+.vscode/
