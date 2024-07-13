@@ -1,8 +1,7 @@
 # WordPress data
-wp_data/
-!wp_data/wp-content/
+wp_data/wp-admin/
 wp_data/wp-content/uploads/
-
+wp_data/wp-includes/
 # MySQL data
 db_data/
 
